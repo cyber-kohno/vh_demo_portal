@@ -1,0 +1,355 @@
+@charset "utf-8";
+
+/* @font-face {
+    font-family: 'logo';
+    src: url(../font/KouzanGyoushoOTF.otf);
+    /* src: url('/mokko-museum/font/KouzanGyoushoOTF.otf'); */
+} */
+
+html, body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body {
+    display: block;
+    /* min-width: 400px; */
+    /* min-height: 600px; */
+    font-size: 0;
+    background: #000;
+    /* position: fixed; */
+    /* overflow: hidden; */
+}
+
+.adjust {
+    height: 90px;
+}
+
+#face {
+    display: block;
+    width: 100%;
+    height: 780px;
+    position: relative;
+}
+
+#img-list>img {
+    position: absolute;
+    margin: 5px 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: opacity 2000ms;
+    filter: sepia(40%);
+}
+#face>#catch {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    left: 0;
+    z-index: 90;
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* background-color: rgba(0, 0, 0, 0.26); */
+    background: linear-gradient(to bottom, rgba(0, 0, 20, 0), rgba(0, 0, 20, 0.332), rgba(0, 0, 20, 0));
+}
+#face>#catch>div {
+    display: inline-block;
+    width: 100%;
+    /* height: 60px; */
+    text-align: center;
+    color: rgb(255, 255, 255);
+    filter: drop-shadow(10px 10px 4px #000000);
+    margin-top: 20px;
+}
+#face>#catch>div:nth-child(1) {
+    font-size: 40px;
+    /* font-weight: 600; */
+}
+#face>#catch>div:nth-child(2) {
+    display: inline-block;
+    font-size: 30px;
+}
+
+.disable {
+    opacity: 0.3 !important;
+    pointer-events: none !important;
+    -webkit-user-select: none !important;
+}
+
+.hide {
+    opacity: 0 !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.param {
+    display: none !important;
+}
+
+.lock {
+    overflow: hidden !important;
+    /* position: fixed !important; */
+}
+
+.main {
+    display: inline-block;
+    height: calc(100%);
+    width: 100%;
+    bottom: 0;
+    background-color: #403864;
+    overflow: auto;
+}
+
+header {
+    display: block;
+    position: fixed;
+    z-index: 95;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    /* background-color: rgba(55, 15, 0, 0.9); */
+    background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0)
+    );
+}
+
+.logo {
+    display: inline-block;
+    font-family: logo;
+    /* @font-faceで定義したフォント名を指定 */
+    color: rgba(204, 204, 204, 0.76);
+    margin: 8px 10px;
+    font-weight: 600;
+    width: 400px;
+    /* vertical-align: middle; */
+    text-align: left;
+    /* background-color: rgba(255, 255, 255, 0.082); */
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+.logo>span {
+    font-size: 28px;
+    font-style: italic;
+}
+
+header>ul {
+    display: inline-block;
+    margin: 8px 10px;
+    text-align: center;
+    width: calc(100% - 460px);
+    vertical-align: middle;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+}
+
+header>ul>li {
+    display: inline-block;
+    margin: 8px 10px;
+    display: inline-block;
+    font-family: logo;
+    font-size: 18px;
+    color: #eee;
+    /* font-weight: 600; */
+    user-select: none;
+    transition: color 300ms;
+}
+
+header>ul>li:hover {
+    color: #999;
+}
+
+#small-menu {
+    display: none;
+    float: right;
+    margin: 15px 10px 0 0;
+    border: solid 2px #aaa;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+
+#menu-icon {
+    display: flex;
+    /* height: 60px;
+    width: 60px; */
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    /* 重なり順を一番上に */
+    cursor: pointer;
+    /* background-color: #fff; */
+}
+
+/* ハンバーガーメニューのアイコン */
+
+#menu-icon span, #menu-icon span:before, #menu-icon span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: #999;
+    transition: 0.5s;
+    position: absolute;
+}
+
+/* 三本線のうち一番上の棒の位置調整 */
+
+#menu-icon span:before {
+    bottom: 8px;
+}
+
+/* 三本線のうち一番下の棒の位置調整 */
+
+#menu-icon span:after {
+    top: 8px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+
+.active#menu-icon span {
+    background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+
+.active#menu-icon span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+.active#menu-icon span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#fixed-menu {
+    /* width: 400px; */
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 99;
+    background: #333;
+    transition: .5s;
+    /* display: none; */
+    opacity: 0;
+    transition: opacity 400ms;
+}
+
+#fixed-menu.active {
+    left: 0;
+    opacity: 0.9;
+}
+
+#fixed-menu>ul {
+    display: block;
+    margin: 78px 10px;
+    text-align: center;
+    width: 100%;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+}
+
+#fixed-menu>ul>li {
+    display: block;
+    margin: 28px 0px;
+    font-family: logo;
+    font-size: 28px;
+    color: #eee;
+    font-weight: 600;
+    user-select: none;
+    transition: color 300ms;
+}
+
+#fixed-menu>ul>li:hover {
+    color: #999;
+}
+
+@media screen and (max-width: 961px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+    header>ul {
+        display: none;
+    }
+    #small-menu {
+        display: inline-block;
+    }
+}
+
+#top-cont {
+    display: block;
+    width: 100%;
+    background-color: rgb(37, 37, 37);
+    /* overflow-y: scroll; */
+
+    text-align: center;
+}
+#top-cont>.record {
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+}
+#top-cont>.record>div {
+    display: inline-block;
+    width: 550px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.274);
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    vertical-align: top;
+    position: relative;
+    text-align: left;
+}
+#top-cont>.record>div>.catch {
+    display: inline-block;
+    font-size: 38px;
+    color: rgba(255, 255, 255, 0.719);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+#top-cont>.record>div>.detail {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 28px;
+    color: rgb(255, 255, 255);
+}
+#top-cont>.record>div>img {
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: fill;
+    /* object-position: 50% 50%; */
+    /* filter: sepia(40%); */
+}
+
+footer {
+    height: 100px;
+    background-color: #034;
+    text-align: center;
+}
+
+footer > p {
+    display: inline-block;
+    margin: auto;
+    font-size: 24px;
+    color: seashell;
+    line-height: 100px;
+}
+
+.test {
+    font-size: 40px;
+    color: turquoise;
+}
