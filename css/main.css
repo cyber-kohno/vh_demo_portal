@@ -292,7 +292,7 @@ header>ul>li:hover {
     width: 100%;
     /* background-color: rgb(37, 37, 37); */
     /* background: linear-gradient(to right, rgb(40, 10, 10), rgb(0, 0, 0), rgb(40, 10, 10)); */
-    background: linear-gradient(to right, rgb(40, 40, 40), rgb(0, 0, 0), rgb(40, 40, 40));
+    background: linear-gradient(to right, rgb(60, 60, 60), rgb(0, 0, 0), rgb(60, 60, 60));
     /* overflow-y: scroll; */
 
     text-align: center;
