@@ -290,7 +290,9 @@ header>ul>li:hover {
 #top-cont {
     display: block;
     width: 100%;
-    background-color: rgb(37, 37, 37);
+    /* background-color: rgb(37, 37, 37); */
+    /* background: linear-gradient(to right, rgb(40, 10, 10), rgb(0, 0, 0), rgb(40, 10, 10)); */
+    background: linear-gradient(to right, rgb(40, 40, 60), rgb(0, 0, 0), rgb(40, 40, 60));
     /* overflow-y: scroll; */
 
     text-align: center;
@@ -304,7 +306,7 @@ header>ul>li:hover {
     display: inline-block;
     width: 550px;
     height: 600px;
-    background-color: rgba(0, 0, 0, 0.274);
+    /* background-color: rgba(0, 0, 0, 0.274); */
     margin: 10px;
     padding: 10px;
     box-sizing: border-box;
